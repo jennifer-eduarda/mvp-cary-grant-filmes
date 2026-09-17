@@ -102,9 +102,7 @@ df_bronze = (
     .option("sep", ",")
     .load(FILE_PATH)
 
-
 display(df_bronze)
-
 
 # 3. Modelagem e Catálogo de Dados (Etapa 4.3)
 
