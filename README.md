@@ -179,3 +179,45 @@ O uso do formato Delta permite trabalhar com tabelas estruturadas no ambiente do
 
 
 Dessa forma, o projeto apresenta uma separação entre os dados brutos, os dados tratados e os dados preparados para análise, seguindo a lógica das camadas Bronze, Silver e Gold.
+
+# 4. Pipeline de Dados (Etapa 4.4)
+
+## Fluxo do pipeline
+
+O pipeline desenvolvido neste projeto segue o fluxo:
+
+**Fonte dos dados → Volume do Databricks → Bronze → Silver → Gold → Análise**
+
+O processo foi implementado utilizando Apache Spark no ambiente Databricks.
+
+### Etapa 1 - Ingestão dos dados
+
+Os dados foram disponibilizados em um arquivo CSV e carregados no Volume do Databricks:
+
+`/Volumes/workspace/default/cary_grant_raw`
+
+O arquivo utilizado foi:
+
+`cary_grant_filmes.csv`
+
+A camada Bronze foi criada a partir da leitura desse arquivo utilizando Spark.
+
+### Etapa 2 - Camada Bronze
+
+Na camada Bronze, os dados são carregados mantendo sua estrutura original.
+
+O arquivo CSV é lido utilizando o seguinte processo:
+
+```python
+FILE_PATH = f"{RAW_PATH}/cary_grant_filmes.csv"
+
+df_bronze = (
+    spark.read
+    .format("csv")
+    .option("header", True)
+    .option("inferSchema", True)
+    .option("sep", ",")
+    .load(FILE_PATH)
+)
+
+display(df_bronze)
