@@ -101,7 +101,7 @@ df_bronze = (
     .option("inferSchema", True)
     .option("sep", ",")
     .load(FILE_PATH)
-)
+
 
 display(df_bronze)
 
