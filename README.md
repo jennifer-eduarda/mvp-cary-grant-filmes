@@ -222,3 +222,59 @@ df_bronze = (
 )
 
 display(df_bronze)
+
+# 5. Qualidade de Dados (Etapa 4.5)
+
+## Verificações realizadas
+
+Após a transformação dos dados para a camada Silver, foram realizadas verificações para avaliar a qualidade do conjunto de dados.
+
+Foram verificados:
+
+- quantidade total de registros;
+- quantidade de identificadores IMDb distintos;
+- existência de valores nulos;
+- faixa de valores das avaliações IMDb;
+- existência de registros duplicados.
+
+## Resultados
+
+Após o tratamento dos dados, foram obtidos os seguintes resultados:
+
+| Indicador | Resultado |
+|---|---:|
+| Total de registros | 20 |
+| IDs IMDb distintos | 20 |
+| IDs nulos | 0 |
+| Títulos nulos | 0 |
+| Anos nulos | 0 |
+| Gêneros nulos | 0 |
+| Avaliações nulas | 0 |
+| Diretores nulos | 0 |
+| Menor avaliação IMDb | 5.9 |
+| Maior avaliação IMDb | 8.3 |
+
+A quantidade de identificadores IMDb distintos é igual à quantidade total de registros, indicando que não foram identificadas duplicidades com base no identificador do filme.
+
+Também não foram encontrados valores nulos nas principais colunas utilizadas nas análises.
+
+As avaliações presentes no conjunto analisado variam de **5.9 a 8.3**.
+
+## Tratamentos aplicados
+
+Na camada Silver foram aplicados tratamentos para melhorar a qualidade e a padronização dos dados.
+
+Entre eles estão:
+
+- remoção de espaços desnecessários dos campos textuais;
+- conversão dos tipos de dados;
+- padronização das informações;
+- remoção de registros duplicados utilizando `imdb_id`.
+
+Essas etapas foram realizadas antes da criação das tabelas Gold, garantindo que os dados utilizados nas análises passassem por uma etapa de validação e tratamento.
+
+## Considerações sobre a qualidade
+
+Os resultados das verificações indicam que o conjunto de dados utilizado no MVP apresenta consistência para as análises propostas.
+
+Entretanto, como o conjunto possui apenas 20 filmes selecionados, os resultados devem ser interpretados dentro do escopo dessa amostra e não como uma representação estatística de toda a filmografia de Cary Grant.
