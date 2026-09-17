@@ -104,3 +104,77 @@ df_bronze = (
 )
 
 display(df_bronze)
+
+# 3. Modelagem e Catálogo de Dados (Etapa 4.3)
+
+## Arquitetura de dados
+
+O projeto utiliza uma arquitetura em camadas baseada no conceito de Medallion Architecture, organizando os dados nas camadas Bronze, Silver e Gold.
+
+Essa estrutura permite separar os dados brutos das etapas de tratamento e das informações preparadas para análise.
+
+### Camada Bronze
+
+A camada Bronze representa os dados após sua ingestão no ambiente de nuvem.
+
+Nesta etapa, o arquivo CSV é carregado a partir do Volume do Databricks, mantendo sua estrutura original para preservar os dados brutos.
+
+A leitura dos dados foi realizada por meio do Apache Spark, gerando o DataFrame `df_bronze`.
+
+### Camada Silver
+
+A camada Silver contém os dados tratados e padronizados.
+
+Nesta etapa foram realizadas transformações como:
+
+- remoção de espaços desnecessários nos campos textuais;
+- conversão dos tipos de dados;
+- padronização das colunas;
+- remoção de registros duplicados utilizando o identificador IMDb;
+- manutenção de uma estrutura adequada para as análises posteriores.
+
+O resultado foi armazenado como uma tabela Delta no catálogo do Databricks:
+
+`workspace.default.cary_grant_silver`
+
+### Camada Gold
+
+A camada Gold contém dados preparados especificamente para responder às perguntas de negócio definidas no projeto.
+
+Foram criadas três tabelas Gold:
+
+| Tabela | Finalidade |
+|---|---|
+| `workspace.default.cary_grant_gold_avaliacoes` | Organização dos filmes de acordo com suas avaliações no IMDb |
+| `workspace.default.cary_grant_gold_generos` | Análise da frequência dos gêneros e de suas avaliações médias |
+| `workspace.default.cary_grant_gold_diretores` | Análise da quantidade de filmes por diretor, avaliação média e melhor avaliação |
+
+## Catálogo de Dados
+
+As tabelas do projeto foram armazenadas no Unity Catalog utilizando o namespace:
+
+`workspace.default`
+
+A organização das tabelas permite identificar de forma estruturada os dados tratados e os resultados preparados para análise.
+
+### Tabelas criadas
+
+**Silver**
+
+`workspace.default.cary_grant_silver`
+
+**Gold**
+
+`workspace.default.cary_grant_gold_avaliacoes`
+
+`workspace.default.cary_grant_gold_generos`
+
+`workspace.default.cary_grant_gold_diretores`
+
+## Formato de armazenamento
+
+As tabelas Silver e Gold foram armazenadas no formato **Delta Lake**.
+
+O uso do formato Delta permite trabalhar com tabelas estruturadas no ambiente do Databricks e manter os dados organizados para as etapas posteriores do pipeline.
+
+Dessa forma, o projeto apresenta uma separação entre os dados brutos, os dados tratados e os dados preparados para análise, seguindo a lógica das camadas Bronze, Silver e Gold.
