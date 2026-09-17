@@ -48,3 +48,59 @@ As principais variáveis utilizadas no projeto são:
 Para este MVP foi utilizada uma amostra de **20 filmes** da filmografia de Cary Grant. Dessa forma, os resultados apresentados nas análises refletem exclusivamente os filmes presentes nesse conjunto de dados e não devem ser interpretados como uma análise completa de toda a carreira cinematográfica do ator.
 
 O projeto tem caráter acadêmico e tem como foco principal demonstrar a construção e o funcionamento de um pipeline de dados em nuvem, desde a ingestão dos dados brutos até a geração de informações organizadas para análise.
+
+
+# 2. Carga dos Dados (Etapa 4.2)
+
+## Fonte dos dados
+
+Os dados utilizados neste projeto foram obtidos a partir de informações relacionadas à filmografia de Cary Grant, tendo o IMDb como fonte principal para títulos e avaliações dos filmes. Informações de filmografia e direção também foram utilizadas para conferência dos dados.
+
+O conjunto de dados foi preparado especificamente para este MVP, contendo uma amostra de 20 filmes selecionados da filmografia de Cary Grant.
+
+O IMDb é uma fonte de referência para informações cinematográficas e seus dados podem sofrer atualizações ao longo do tempo. Portanto, as avaliações utilizadas representam um retrato dos dados no momento da preparação do conjunto utilizado neste projeto.
+
+## Armazenamento dos dados brutos
+
+Para o armazenamento dos dados brutos foi utilizado um Volume no Databricks, localizado no Unity Catalog.
+
+O Volume utilizado foi:
+
+`/Volumes/workspace/default/cary_grant_raw`
+
+O arquivo `cary_grant_filmes.csv` foi carregado nesse Volume e mantido em seu formato original para preservar os dados brutos antes das transformações.
+
+## Estrutura do arquivo
+
+O arquivo CSV contém as seguintes colunas:
+
+| Coluna | Tipo | Descrição |
+|---|---|---|
+| `imdb_id` | String | Identificador do filme no IMDb |
+| `titulo` | String | Título do filme |
+| `ano` | Integer | Ano de lançamento |
+| `generos` | String | Gêneros cinematográficos do filme |
+| `avaliacao_imdb` | Double | Avaliação do filme no IMDb |
+| `diretor` | String | Diretor do filme |
+
+O conjunto de dados possui inicialmente 20 registros.
+
+## Leitura dos dados - Camada Bronze
+
+Após o carregamento do arquivo no Volume, os dados foram lidos no Databricks utilizando Apache Spark.
+
+Foi utilizado o formato CSV, com a primeira linha do arquivo definida como cabeçalho e inferência automática dos tipos das colunas.
+
+```python
+FILE_PATH = f"{RAW_PATH}/cary_grant_filmes.csv"
+
+df_bronze = (
+    spark.read
+    .format("csv")
+    .option("header", True)
+    .option("inferSchema", True)
+    .option("sep", ",")
+    .load(FILE_PATH)
+)
+
+display(df_bronze)
