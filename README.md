@@ -222,7 +222,7 @@ df_bronze = (
 )
 
 display(df_bronze)
-
+```
 # 5. Qualidade de Dados (Etapa 4.5)
 
 ## Verificações realizadas
