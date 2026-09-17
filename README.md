@@ -177,4 +177,5 @@ As tabelas Silver e Gold foram armazenadas no formato **Delta Lake**.
 
 O uso do formato Delta permite trabalhar com tabelas estruturadas no ambiente do Databricks e manter os dados organizados para as etapas posteriores do pipeline.
 
+
 Dessa forma, o projeto apresenta uma separação entre os dados brutos, os dados tratados e os dados preparados para análise, seguindo a lógica das camadas Bronze, Silver e Gold.
