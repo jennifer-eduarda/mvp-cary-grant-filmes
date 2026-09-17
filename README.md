@@ -278,3 +278,149 @@ Essas etapas foram realizadas antes da criação das tabelas Gold, garantindo qu
 Os resultados das verificações indicam que o conjunto de dados utilizado no MVP apresenta consistência para as análises propostas.
 
 Entretanto, como o conjunto possui apenas 20 filmes selecionados, os resultados devem ser interpretados dentro do escopo dessa amostra e não como uma representação estatística de toda a filmografia de Cary Grant.
+
+# 6. Análise de Dados (Etapa 4.5)
+
+## Objetivo da análise
+
+A etapa de análise tem como objetivo utilizar os dados tratados e organizados nas camadas Silver e Gold para responder às perguntas de negócio definidas no início do projeto.
+
+As análises foram realizadas sobre uma amostra selecionada de 20 filmes da filmografia de Cary Grant, considerando informações sobre título, ano de lançamento, gêneros, avaliação no IMDb e diretor.
+
+## Pergunta 1 – Quais foram os filmes de Cary Grant com as melhores avaliações?
+
+A primeira análise ordena os filmes de acordo com sua avaliação no IMDb, permitindo identificar os títulos com maiores avaliações dentro da amostra analisada.
+
+Os cinco primeiros resultados foram:
+
+| Filme | Ano | Avaliação IMDb |
+|---|---:|---:|
+| North by Northwest | 1959 | 8.3 |
+| Arsenic and Old Lace | 1944 | 7.9 |
+| Notorious | 1946 | 7.9 |
+| The Philadelphia Story | 1940 | 7.8 |
+| Bringing Up Baby | 1938 | 7.8 |
+
+Também aparecem com avaliação 7.8 os filmes His Girl Friday, Charade e Gunga Din.
+
+A análise demonstra que, dentro da amostra selecionada, North by Northwest apresentou a maior avaliação no IMDb, com 8.3.
+
+## Pergunta 2 – Como as avaliações dos filmes de Cary Grant se distribuem ao longo dos anos?
+
+A segunda análise relaciona o ano de lançamento dos filmes com suas respectivas avaliações no IMDb.
+
+| Ano | Quantidade de filmes | Avaliação média |
+|---:|---:|---:|
+| 1937 | 1 | 7.70 |
+| 1938 | 1 | 7.80 |
+| 1939 | 2 | 7.70 |
+| 1940 | 2 | 7.80 |
+| 1941 | 1 | 7.30 |
+| 1944 | 1 | 7.90 |
+| 1946 | 1 | 7.90 |
+| 1947 | 1 | 7.60 |
+| 1952 | 2 | 7.05 |
+| 1953 | 1 | 5.90 |
+| 1955 | 1 | 7.40 |
+| 1957 | 1 | 7.40 |
+| 1959 | 2 | 7.75 |
+| 1962 | 1 | 6.60 |
+| 1963 | 1 | 7.80 |
+| 1966 | 1 | 6.60 |
+
+Na amostra analisada, as maiores médias de avaliação ocorreram em 1944 e 1946, ambas com 7.9. O ano de 1953 apresentou a menor média, com 5.9.
+
+Como vários anos possuem apenas um filme na amostra, essas médias devem ser interpretadas considerando a quantidade de registros disponível em cada ano.
+
+## Pergunta 3 – Quais gêneros cinematográficos aparecem com maior frequência em sua filmografia?
+
+Para responder à terceira pergunta, os gêneros foram separados individualmente e contabilizados a partir dos filmes analisados.
+
+| Gênero | Quantidade de filmes |
+|---|---:|
+| Romance | 18 |
+| Comedy | 14 |
+| Drama | 6 |
+| Thriller | 5 |
+| Mystery | 4 |
+| Adventure | 3 |
+| Film-Noir | 2 |
+| War | 2 |
+| Crime | 1 |
+| Fantasy | 1 |
+| Sci-Fi | 1 |
+
+O gênero mais frequente na amostra foi Romance, presente em 18 dos 20 filmes analisados. Comedy aparece em segundo lugar, presente em 14 filmes.
+
+A análise mostra que os filmes selecionados apresentam forte presença de gêneros relacionados a romance e comédia, embora também apareçam categorias como drama, suspense, aventura e guerra.
+
+## Pergunta 4 – Quais foram as parcerias mais frequentes entre Cary Grant e diretores?
+
+A quarta análise contabiliza a quantidade de filmes da amostra associados a cada diretor.
+
+| Diretor | Quantidade de filmes | Avaliação média |
+|---|---:|---:|
+| Alfred Hitchcock | 4 | 7.73 |
+| Howard Hawks | 4 | 7.53 |
+| Leo McCarey | 2 | 7.55 |
+| George Cukor | 1 | 7.80 |
+| Stanley Donen | 1 | 7.80 |
+| Frank Capra | 1 | 7.90 |
+| George Stevens | 1 | 7.80 |
+| Henry Koster | 1 | 7.60 |
+| Blake Edwards | 1 | 7.20 |
+| Norman Taurog | 1 | 7.20 |
+| Delbert Mann | 1 | 6.60 |
+| Sidney Sheldon | 1 | 5.90 |
+| Charles Walters | 1 | 6.60 |
+
+Na amostra selecionada, as parcerias mais frequentes foram com Alfred Hitchcock e Howard Hawks, com quatro filmes cada. Leo McCarey aparece em seguida, com dois filmes.
+
+## Pergunta 5 – Quais diretores que trabalharam com Cary Grant tiveram os filmes com as melhores avaliações?
+
+Para essa análise, foi considerada a maior avaliação IMDb registrada entre os filmes de cada diretor na amostra.
+
+| Diretor | Quantidade de filmes | Avaliação média | Melhor avaliação |
+|---|---:|---:|---:|
+| Alfred Hitchcock | 4 | 7.73 | 8.3 |
+| Frank Capra | 1 | 7.90 | 7.9 |
+| George Cukor | 1 | 7.80 | 7.8 |
+| Howard Hawks | 4 | 7.53 | 7.8 |
+| Stanley Donen | 1 | 7.80 | 7.8 |
+| George Stevens | 1 | 7.80 | 7.8 |
+| Leo McCarey | 2 | 7.55 | 7.7 |
+| Henry Koster | 1 | 7.60 | 7.6 |
+
+Na amostra analisada, o maior valor individual de avaliação está associado a um filme dirigido por Alfred Hitchcock, com 8.3.
+
+A quantidade de filmes também foi considerada na tabela para contextualizar os resultados, já que alguns diretores aparecem apenas uma vez na amostra.
+
+## Síntese das análises
+
+As cinco análises permitiram explorar diferentes aspectos da amostra de filmes de Cary Grant, incluindo avaliações, evolução temporal, frequência de gêneros e recorrência de diretores.
+
+Os resultados mostram que North by Northwest apresentou a maior avaliação IMDb da amostra, enquanto Romance foi o gênero mais frequente. Alfred Hitchcock e Howard Hawks foram os diretores com maior número de filmes entre os títulos selecionados.
+
+Os resultados apresentados são referentes exclusivamente aos 20 filmes selecionados para este MVP e não representam necessariamente toda a filmografia de Cary Grant.
+
+# 7. Autoavaliação
+
+Este projeto foi uma oportunidade de aplicar, de forma prática, conceitos relacionados à construção de um pipeline de dados em ambiente de nuvem.
+
+Durante o desenvolvimento foram trabalhadas etapas de ingestão, armazenamento, transformação, modelagem, controle de qualidade e análise dos dados utilizando Databricks e Apache Spark.
+
+Esta foi minha primeira experiência utilizando o Databricks para a construção de um pipeline de dados e também minha primeira experiência estruturando a documentação de um projeto por meio de um arquivo README no GitHub. Por esse motivo, algumas etapas apresentaram desafios e exigiram maior atenção, principalmente para compreender a organização das camadas, o armazenamento dos dados e a estruturação da documentação.
+
+No início do projeto, também existia uma preocupação em relação ao tamanho dos dados e à possibilidade de o conjunto utilizado ficar muito pesado para ser processado no ambiente de nuvem. Por isso, foi escolhido inicialmente um conjunto de dados mais enxuto, contendo 20 filmes selecionados, permitindo compreender o funcionamento do pipeline e realizar as etapas de tratamento e análise de forma mais controlada.
+
+Ao longo do desenvolvimento, foi possível compreender melhor como os dados podem ser organizados em diferentes camadas e como o Databricks pode ser utilizado para realizar o processamento e armazenamento dessas informações.
+
+O projeto foi estruturado seguindo a lógica de camadas Bronze, Silver e Gold, permitindo separar os dados brutos dos dados tratados e das informações preparadas para análise.
+
+Entre os principais aprendizados estão a utilização de Volumes no Databricks, a leitura de arquivos CSV com Spark, a transformação de DataFrames, a criação de tabelas em Delta Lake, a utilização do catálogo para organização dos dados e a documentação de um projeto técnico no GitHub.
+
+Como limitação, o projeto utiliza uma amostra selecionada de 20 filmes de Cary Grant. Dessa forma, os resultados das análises devem ser interpretados dentro do escopo desse conjunto de dados e não como uma análise completa de toda a filmografia do ator.
+
+Como evolução futura, o pipeline poderia ser ampliado para trabalhar com um conjunto maior de filmes e incluir novas informações, como número de votos, elenco, roteiristas e outras características dos títulos, permitindo análises mais abrangentes.
+
+Considero que o desenvolvimento deste MVP contribuiu para ampliar minha compreensão sobre pipelines de dados em nuvem e proporcionou uma primeira experiência prática com ferramentas e conceitos de Engenharia de Dados que ainda não havia utilizado anteriormente.
