@@ -1,4 +1,4 @@
-# 1. Contexto de Negócios e Perguntas (Etapa 2 e 4.1)
+# 1. Contexto de Negócios e Perguntas
 
 ## Contexto do projeto
 
@@ -50,7 +50,7 @@ Para este MVP foi utilizada uma amostra de **20 filmes** da filmografia de Cary 
 O projeto tem caráter acadêmico e tem como foco principal demonstrar a construção e o funcionamento de um pipeline de dados em nuvem, desde a ingestão dos dados brutos até a geração de informações organizadas para análise.
 
 
-# 2. Carga dos Dados (Etapa 4.2)
+# 2. Carga dos Dados 
 
 ## Fonte dos dados
 
@@ -106,7 +106,7 @@ df_bronze = (
 display(df_bronze)
 
 ```
-# 3. Modelagem e Catálogo de Dados (Etapa 4.3)
+# 3. Modelagem e Catálogo de Dados 
 
 ## Arquitetura de dados
 
@@ -181,7 +181,7 @@ O uso do formato Delta permite trabalhar com tabelas estruturadas no ambiente do
 
 Dessa forma, o projeto apresenta uma separação entre os dados brutos, os dados tratados e os dados preparados para análise, seguindo a lógica das camadas Bronze, Silver e Gold.
 
-# 4. Pipeline de Dados (Etapa 4.4)
+# 4. Pipeline de Dados 
 
 ## Fluxo do pipeline
 
@@ -223,7 +223,7 @@ df_bronze = (
 
 display(df_bronze)
 ```
-# 5. Qualidade de Dados (Etapa 4.5)
+# 5. Qualidade de Dados 
 
 ## Verificações realizadas
 
@@ -279,7 +279,7 @@ Os resultados das verificações indicam que o conjunto de dados utilizado no MV
 
 Entretanto, como o conjunto possui apenas 20 filmes selecionados, os resultados devem ser interpretados dentro do escopo dessa amostra e não como uma representação estatística de toda a filmografia de Cary Grant.
 
-# 6. Análise de Dados (Etapa 4.5)
+# 6. Análise de Dados 
 
 ## Objetivo da análise
 
